@@ -113,4 +113,4 @@ https://address-book-fernanda.herokuapp.com/api-docs
 
 # Deploy in Heroku
 
-https://address-book-fernanda.herokuapp.com/api/v1/# address-book-api-refac
+https://address-book-fernanda.herokuapp.com/api/v1/
