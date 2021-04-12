@@ -49,7 +49,7 @@ mv .env.example .env
 
 3. run the docker images:
 ```
-$ docker-compose up -d
+$ docker-compose up
 ```
 
 ### Setting the ormconfig.json
