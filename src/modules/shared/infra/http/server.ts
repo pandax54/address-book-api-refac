@@ -1,10 +1,10 @@
 import env from 'env-var'
 
 import 'dotenv/config'
+import logger from '../../logger'
 import { app } from './app'
-import './database'
-import logger from './logger'
-import './modules/shared/container'
+import '../typeorm/database'
+import '../../container'
 
 const port = env.get('PORT').required().asPortNumber()
 

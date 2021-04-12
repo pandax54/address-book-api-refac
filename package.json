@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/src/server.js",
-    "dev": "ENV=dev tsnd --transpile-only --ignore-watch node_modules src/server.ts",
+    "dev": "ENV=dev tsnd --transpile-only --ignore-watch node_modules src/modules/shared/infra/http/server.ts",
     "orm": "tsnd node_modules/typeorm/cli.js",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test": "ENV=test FIREBASE_INTEGRATION_TEST=-test jest --passWithNoTests --noStackTrace --runInBand"

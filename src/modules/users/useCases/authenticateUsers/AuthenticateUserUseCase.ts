@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
 
-import AppError from '../../../../errors/AppError'
+import AppError from '../../../shared/errors/AppError'
 import { IAuthentication } from '../../providers/IAuthentication'
 import { IHashProvider } from '../../providers/IBCryptHashProvider'
 import { IUsersRepository } from '../../repositories/IUsersRepository'
@@ -8,6 +8,10 @@ import { IUsersRepository } from '../../repositories/IUsersRepository'
 interface IRequest {
   email: string
   password: string
+}
+
+interface IResponse {
+  token: string
 }
 
 @injectable()
@@ -21,14 +25,14 @@ class AuthenticateUserUseCase {
     private jWTAuthentication: IAuthentication,
   ) {}
 
-  async execute({ email, password }: IRequest): Promise<string> {
+  async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.usersRepository.findByEmail(email)
 
     if (!user) {
       throw new AppError('Email/Password does not match.', 401)
     }
 
-    const passwordMatched = this.hashProvider.compareHash(
+    const passwordMatched = await this.hashProvider.compareHash(
       password,
       user.password,
     )
@@ -39,7 +43,7 @@ class AuthenticateUserUseCase {
 
     const token = await this.jWTAuthentication.generate(user.id)
 
-    return token
+    return { token }
   }
 }
 

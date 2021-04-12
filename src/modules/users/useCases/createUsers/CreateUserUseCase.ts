@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
 
-import AppError from '../../../../errors/AppError'
+import AppError from '../../../shared/errors/AppError'
 import { IAuthentication } from '../../providers/IAuthentication'
 import { IHashProvider } from '../../providers/IBCryptHashProvider'
 import { IUsersRepository } from '../../repositories/IUsersRepository'
@@ -8,6 +8,10 @@ import { IUsersRepository } from '../../repositories/IUsersRepository'
 interface IRequest {
   email: string
   password: string
+}
+
+interface IResponse {
+  token: string
 }
 
 @injectable()
@@ -21,7 +25,7 @@ class CreateUserUseCase {
     private jWTAuthentication: IAuthentication,
   ) {}
 
-  async execute({ email, password }: IRequest): Promise<string> {
+  async execute({ email, password }: IRequest): Promise<IResponse> {
     const checkAccountEmail = await this.usersRepository.findByEmail(email)
 
     if (checkAccountEmail) {
@@ -37,7 +41,7 @@ class CreateUserUseCase {
 
     const token = await this.jWTAuthentication.generate(user.id)
 
-    return token
+    return { token }
   }
 }
 

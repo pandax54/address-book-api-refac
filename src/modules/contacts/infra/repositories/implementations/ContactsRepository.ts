@@ -1,8 +1,8 @@
 import env from 'env-var'
 import { v4 as uuid } from 'uuid'
 
-import { admin } from '../../../../database/firebase'
-import { ICreateContactDTO } from '../../dtos/ICreateContactDTO'
+import { admin } from '../../../../shared/infra/firebase/firebase'
+import { ICreateContactDTO } from '../../../dtos/ICreateContactDTO'
 
 const db = admin.database()
 

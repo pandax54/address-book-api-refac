@@ -1,9 +1,9 @@
 import { celebrate, Segments, Joi } from 'celebrate'
 import { Router } from 'express'
 
+import { CreateUserController } from '../../../../users/useCases/createUsers/CreateUserController'
+import { ListProfileUserController } from '../../../../users/useCases/listProfileUsers/ListProfileUserController'
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated'
-import { CreateUserController } from '../modules/users/useCases/createUsers/CreateUserController'
-import { ListProfileUserController } from '../modules/users/useCases/listProfileUsers/ListProfileUserController'
 
 const createUserController = new CreateUserController()
 const listProfileUserController = new ListProfileUserController()

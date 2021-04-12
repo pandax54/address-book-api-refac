@@ -1,7 +1,7 @@
 import { celebrate, Segments, Joi } from 'celebrate'
 import { Router } from 'express'
 
-import { AuthenticateUserController } from '../modules/users/useCases/authenticateUsers/AuthenticateUserController'
+import { AuthenticateUserController } from '../../../../users/useCases/authenticateUsers/AuthenticateUserController'
 
 const sessionsRouter = Router()
 

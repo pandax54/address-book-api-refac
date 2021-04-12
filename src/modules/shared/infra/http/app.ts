@@ -6,9 +6,9 @@ import cors from 'cors'
 import express, { NextFunction, Request, Response } from 'express'
 import swaggerUi from 'swagger-ui-express'
 
-import swaggerDocument from '../swagger.json'
-import AppError from './errors/AppError'
-import logger from './logger'
+import swaggerDocument from '../../../../../swagger.json'
+import AppError from '../../errors/AppError'
+import logger from '../../logger'
 import router from './routes'
 
 const app = express()

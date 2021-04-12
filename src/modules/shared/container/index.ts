@@ -1,8 +1,8 @@
 import { container } from 'tsyringe'
 
+import { FirebaseRepository } from '../../contacts/infra/repositories/implementations/ContactsRepository'
 import { IContactsRepository } from '../../contacts/repositories/IContactsRepository'
-import { FirebaseRepository } from '../../contacts/repositories/implementations/ContactsRepository'
-import { UsersRepository } from '../../users/repositories/implementations/UsersRepository'
+import { UsersRepository } from '../../users/infra/repositories/implementations/UsersRepository'
 import { IUsersRepository } from '../../users/repositories/IUsersRepository'
 import '../../users/providers'
 

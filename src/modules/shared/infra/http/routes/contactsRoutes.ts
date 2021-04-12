@@ -1,9 +1,9 @@
 import { celebrate, Segments, Joi } from 'celebrate'
 import { Router } from 'express'
 
+import { CreateContactController } from '../../../../contacts/useCases/createContacts/CreateContactController'
+import { ListContactsController } from '../../../../contacts/useCases/listContacts/ListContactsController'
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated'
-import { CreateContactController } from '../modules/contacts/useCases/createContacts/CreateContactController'
-import { ListContactsController } from '../modules/contacts/useCases/listContacts/ListContactsController'
 
 const contactsRouter = Router()
 
