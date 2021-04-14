@@ -8,7 +8,7 @@ interface IRequest {
   last_name: string
   phone_number: string
   address: string
-  created_at: string
+  created_at?: string
 }
 
 @injectable()

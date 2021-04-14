@@ -4,7 +4,7 @@ interface ICreateContactDTO {
   last_name: string
   phone_number: string
   address: string
-  created_at: string
+  created_at?: string
 }
 
 export { ICreateContactDTO }
