@@ -26,6 +26,8 @@ Register your contacts in web and mobile using this API.
 - Supertest
 - Swagger Ui
 - Pino
+- Docker
+- Docker-compose
 
 
 </br>
